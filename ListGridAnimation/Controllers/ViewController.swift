@@ -38,7 +38,7 @@ class ViewController: UIViewController {
         self.collectionView.reloadData()
         self.title = isGridFlowLayoutUsed ? "Grid" : "List"
         let layout = isGridFlowLayoutUsed ? gridCompositionalLayout : listCompositionalLayout
-        let buttonImage = isGridFlowLayoutUsed ? #imageLiteral(resourceName: "grid") : #imageLiteral(resourceName: "list")
+        let buttonImage = isGridFlowLayoutUsed ? #imageLiteral(resourceName: "list") : #imageLiteral(resourceName: "grid")
         self.changeLayoutButton.image = buttonImage
         self.collectionView.startInteractiveTransition(to: layout, completion: {_,_ in
             self.changeLayoutButton.isEnabled = true

@@ -147,7 +147,7 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="List" id="yX8-f4-1ks">
-                        <barButtonItem key="rightBarButtonItem" image="grid" id="Fgx-6G-A74">
+                        <barButtonItem key="rightBarButtonItem" image="list" id="Fgx-6G-A74">
                             <color key="tintColor" name="AccentColor"/>
                             <connections>
                                 <action selector="changeLayoutClicked:" destination="BYZ-38-t0r" id="IfK-yy-StP"/>
@@ -183,7 +183,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="grid" width="32" height="32"/>
+        <image name="list" width="32" height="24.5"/>
         <namedColor name="AccentColor">
             <color red="0.0" green="0.34999999403953552" blue="0.89999997615814209" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
