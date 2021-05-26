@@ -18,8 +18,8 @@
 		E6426AF8265CF4F600C6C6EE /* ListGridAnimationUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6426AF7265CF4F600C6C6EE /* ListGridAnimationUITests.swift */; };
 		E6426B06265CFAA700C6C6EE /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6426B05265CFAA700C6C6EE /* UIView+Extension.swift */; };
 		E6426B09265CFB2E00C6C6EE /* GridCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6426B08265CFB2E00C6C6EE /* GridCell.swift */; };
-		E6426B0B265CFB5300C6C6EE /* ListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6426B0A265CFB5300C6C6EE /* ListCell.swift */; };
 		E6426B0D265D0A7D00C6C6EE /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6426B0C265D0A7D00C6C6EE /* UIColor+Extension.swift */; };
+		E6426B13265DFAA500C6C6EE /* Layout.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6426B12265DFAA500C6C6EE /* Layout.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,8 +57,8 @@
 		E6426AF9265CF4F600C6C6EE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E6426B05265CFAA700C6C6EE /* UIView+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
 		E6426B08265CFB2E00C6C6EE /* GridCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridCell.swift; sourceTree = "<group>"; };
-		E6426B0A265CFB5300C6C6EE /* ListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListCell.swift; sourceTree = "<group>"; };
 		E6426B0C265D0A7D00C6C6EE /* UIColor+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
+		E6426B12265DFAA500C6C6EE /* Layout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Layout.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +109,7 @@
 		E6426AD1265CF4F500C6C6EE /* ListGridAnimation */ = {
 			isa = PBXGroup;
 			children = (
+				E6426B11265DFA9500C6C6EE /* Layout */,
 				E6426B10265D0E3200C6C6EE /* SupportingFiles */,
 				E6426B0F265D0E2600C6C6EE /* Extensions */,
 				E6426B0E265D0E1A00C6C6EE /* Controllers */,
@@ -141,7 +142,6 @@
 			isa = PBXGroup;
 			children = (
 				E6426B08265CFB2E00C6C6EE /* GridCell.swift */,
-				E6426B0A265CFB5300C6C6EE /* ListCell.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -173,6 +173,14 @@
 				E6426ADB265CF4F500C6C6EE /* ListGridAnimation.xcdatamodeld */,
 			);
 			path = SupportingFiles;
+			sourceTree = "<group>";
+		};
+		E6426B11265DFA9500C6C6EE /* Layout */ = {
+			isa = PBXGroup;
+			children = (
+				E6426B12265DFAA500C6C6EE /* Layout.swift */,
+			);
+			path = Layout;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -308,8 +316,8 @@
 				E6426ADD265CF4F500C6C6EE /* ListGridAnimation.xcdatamodeld in Sources */,
 				E6426AD7265CF4F500C6C6EE /* ViewController.swift in Sources */,
 				E6426AD3265CF4F500C6C6EE /* AppDelegate.swift in Sources */,
-				E6426B0B265CFB5300C6C6EE /* ListCell.swift in Sources */,
 				E6426B06265CFAA700C6C6EE /* UIView+Extension.swift in Sources */,
+				E6426B13265DFAA500C6C6EE /* Layout.swift in Sources */,
 				E6426AD5265CF4F500C6C6EE /* SceneDelegate.swift in Sources */,
 				E6426B09265CFB2E00C6C6EE /* GridCell.swift in Sources */,
 				E6426B0D265D0A7D00C6C6EE /* UIColor+Extension.swift in Sources */,

@@ -28,7 +28,7 @@ class ViewController: UIViewController {
     
     func setupCollectionView()
     {
-        collectionView.collectionViewLayout = gridCompositionalLayout
+        collectionView.collectionViewLayout = Layout.gridCompositionalLayout
         collectionView.delegate = self
         collectionView.dataSource = self
     }
@@ -37,7 +37,7 @@ class ViewController: UIViewController {
         self.changeLayoutButton.isEnabled = false
         self.collectionView.reloadData()
         self.title = isGridFlowLayoutUsed ? "Grid" : "List"
-        let layout = isGridFlowLayoutUsed ? gridCompositionalLayout : listCompositionalLayout
+        let layout = isGridFlowLayoutUsed ? Layout.gridCompositionalLayout : Layout.listCompositionalLayout
         let buttonImage = isGridFlowLayoutUsed ? #imageLiteral(resourceName: "list") : #imageLiteral(resourceName: "grid")
         self.changeLayoutButton.image = buttonImage
         self.collectionView.startInteractiveTransition(to: layout, completion: {_,_ in
@@ -50,44 +50,6 @@ class ViewController: UIViewController {
         isGridFlowLayoutUsed = !isGridFlowLayoutUsed
     }
     
-    let gridCompositionalLayout: UICollectionViewCompositionalLayout = {
-        let fraction: CGFloat = 1 / 3
-        let inset: CGFloat = 10
-        
-        // Item
-        let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(fraction), heightDimension: .fractionalHeight(1))
-        let item = NSCollectionLayoutItem(layoutSize: itemSize)
-        item.contentInsets = NSDirectionalEdgeInsets(top: inset, leading: inset, bottom: inset, trailing: inset)
-        
-        // Group
-        let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .fractionalWidth(fraction*1.2))
-        let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitems: [item])
-        
-        // Section
-        let section = NSCollectionLayoutSection(group: group)
-        section.contentInsets = NSDirectionalEdgeInsets(top: inset, leading: inset, bottom: inset, trailing: inset)
-        return UICollectionViewCompositionalLayout(section: section)
-    }()
-    
-    let listCompositionalLayout: UICollectionViewCompositionalLayout = {
-        let fraction: CGFloat = 1 / 3
-        let inset: CGFloat = 10
-        
-        // Item
-        let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .fractionalHeight(1))
-        let item = NSCollectionLayoutItem(layoutSize: itemSize)
-        item.contentInsets = NSDirectionalEdgeInsets(top: inset, leading: inset, bottom: inset, trailing: inset)
-        
-        // Group
-        let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .fractionalWidth(fraction))
-        let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitems: [item])
-        
-        // Section
-        let section = NSCollectionLayoutSection(group: group)
-        section.contentInsets = NSDirectionalEdgeInsets(top: inset, leading: inset, bottom: inset, trailing: inset)
-        return UICollectionViewCompositionalLayout(section: section)
-    }()
-    
 }
 
 
@@ -99,16 +61,8 @@ extension ViewController: UICollectionViewDataSource, UICollectionViewDelegate {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let colorName = "#\(colors[indexPath.row])"
-        if(isGridFlowLayoutUsed)
-        {
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "GridCell", for: indexPath) as! GridCell
-            cell.bind(colorName: colorName)
-            return cell
-        }
-        else {
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ListCell", for: indexPath) as! ListCell
-            cell.bind(colorName: colorName)
-            return cell
-        }
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "GridCell", for: indexPath) as! GridCell
+        cell.bind(colorName: colorName, isGridFlowLayoutUsed: isGridFlowLayoutUsed)
+        return cell
     }
 }
